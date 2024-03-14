@@ -124,7 +124,8 @@ def main():
         if st.button('開始訓練'):
             st.write("訓練已開始")
             make(all_images,all_labels,cate,z)
-        st.write("模型建立完成")
+            st.write("模型建立完成")
+        st.write('thank')
         
 
 if __name__ == "__main__":
