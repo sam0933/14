@@ -36,13 +36,13 @@ def make(imagess,labelss,many,s,v1):
     model = Sequential([
     #在你的模型中，input_shape 設置為 (28, 28, 1)，這意味著每個輸入圖像的形狀應該是 (28, 28, 1)，而不是 (28, 28, 1)。這是因為模型期望接收單個圖像的形狀，而不是整個訓練集的形狀。所以在訓練模型時，你不需要指定樣本數，只需要指定圖像的高度、寬度和通道數。
         Conv2D(64, (3,3), activation='relu', padding='same', input_shape=(100,100, 1)),
-        Conv2D(64, (3,3), activation='relu', padding='same'),
-        MaxPooling2D((2, 2)),
-        Conv2D(64, (3,3), activation='relu', padding='same'),
-        Conv2D(64, (3,3), activation='relu', padding='same'),
+        #Conv2D(64, (3,3), activation='relu', padding='same'),
+        # MaxPooling2D((2, 2)),
+        # Conv2D(64, (3,3), activation='relu', padding='same'),
+        # Conv2D(64, (3,3), activation='relu', padding='same'),
         MaxPooling2D((2, 2)),
         Flatten(),
-        Dense(512, activation='relu'),
+        #Dense(512, activation='relu'),
         Dropout(0.5),
         Dense(many, activation='softmax')
     ])
