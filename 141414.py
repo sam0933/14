@@ -94,7 +94,7 @@ def make(imagess,labelss,many,s,v1):
     #         v = model.predict(v)
     #         st.write(v1[(np.argmax(v))])
 
-    #model.save("test.keras")
+    model.save("test.keras")
     return model
 
 
