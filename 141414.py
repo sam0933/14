@@ -147,7 +147,7 @@ def main():
             st.write("訓練已開始")
             trained_model = make(all_images,all_labels,cate,z,v)
             st.session_state.trained_model = trained_model
-            download_button = st.download_button(label="下載模型文件", data="trained_model", file_name="trained_model.keras", mime="application/octet-stream")
+            download_button = st.download_button(label="下載模型文件",trained_model, file_name="trained_model.keras", mime="application/octet-stream")
 
             # 模拟一个模型文件的路径
 #             model_path = "test.keras"
