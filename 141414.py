@@ -149,7 +149,7 @@ def main():
             trained_model.save("trained_model.keras")
             with open("trained_model.keras", "rb") as model_file:
                 model_binary = model_file.read()
-            download_button = st.download_button(label="下载模型文件", data=model_binary, file_name="trained_model.h5", mime="application/octet-stream")
+            download_button = st.download_button(label="下载模型文件", data=model_binary, file_name="trained_model.keras", mime="application/octet-stream")
             # st.session_state.trained_model = trained_model
             # model_path="test.keras"
             # download_button = st.download_button(label="下載模型文件",data=model_path, file_name="trained_model.keras", mime="application/octet-stream")
