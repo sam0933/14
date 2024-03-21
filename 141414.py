@@ -94,7 +94,7 @@ def make(imagess,labelss,many,s,v1):
     #         v = model.predict(v)
     #         st.write(v1[(np.argmax(v))])
 
-    model.save("test.keras")
+    #model.save("test.keras")
     return model
 
 
@@ -146,8 +146,10 @@ def main():
         if st.button('開始訓練'):
             st.write("訓練已開始")
             trained_model = make(all_images,all_labels,cate,z,v)
+            trained_model.save("test.keras")
             st.session_state.trained_model = trained_model
-            download_button = st.download_button(label="下載模型文件",trained_model, file_name="trained_model.keras", mime="application/octet-stream")
+            model_path="test.keras"
+            download_button = st.download_button(label="下載模型文件",data=model_path, file_name="trained_model.keras", mime="application/octet-stream")
 
             # 模拟一个模型文件的路径
 #             model_path = "test.keras"
