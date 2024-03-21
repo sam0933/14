@@ -146,10 +146,13 @@ def main():
         if st.button('開始訓練'):
             st.write("訓練已開始")
             trained_model = make(all_images,all_labels,cate,z,v)
-            trained_model.save("test.keras")
-            st.session_state.trained_model = trained_model
-            model_path="test.keras"
-            download_button = st.download_button(label="下載模型文件",data=model_path, file_name="trained_model.keras", mime="application/octet-stream")
+            trained_model.save("trained_model.keras")
+            with open("trained_model.keras", "rb") as model_file:
+                model_binary = model_file.read()
+            download_button = st.download_button(label="下载模型文件", data=model_binary, file_name="trained_model.h5", mime="application/octet-stream")
+            # st.session_state.trained_model = trained_model
+            # model_path="test.keras"
+            # download_button = st.download_button(label="下載模型文件",data=model_path, file_name="trained_model.keras", mime="application/octet-stream")
 
             # 模拟一个模型文件的路径
 #             model_path = "test.keras"
